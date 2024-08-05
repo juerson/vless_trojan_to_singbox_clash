@@ -1,0 +1,77 @@
+# 1、(可选)选择后面[proxies]哪个、哪些代理的参数。
+# 首选select_proxy_index，没有或者参数值不合法，random_proxy_type参数才生效
+[select_proxy]
+# select_proxy_index = 0      # 选择后面哪个代理的参数？有效值范围：[0，len(proxies))，注意：设置这个参数，可能无法使用，或长时间等待才能联通网络
+# random_proxy_type = "vless" # 选择后面哪些代理的参数？vless？还是trojan？可选值：vless、trojan，其它值无效
+
+# -----------------------------------------------------------------------------------------------------------------
+
+# 2、(必须)设置相关vless和trojan协议的节点信息(关键参数)
+[proxies]
+
+[[proxies.vless]]
+remarks_prefix = "Node.1"                          # 这个值用于标识节点的名称(也称别名的前缀)，可以根据自己的情况修改
+uuid = "eac797c4-3004-49fb-8c70-d7c682650e14"
+host = "vless1.pages.dev"
+server_name = "vless1.pages.dev"
+path = "/?ed=2048"
+# random_ports = [443]                               # 节点中的端口，随机从这里的列表/数组中选一个
+random_ports = [443, 2053, 2083, 2087, 2096, 8443]
+
+[[proxies.vless]]
+remarks_prefix = "Node.2"
+uuid = "aeb347d6-ecf4-481b-8593-36bb4d81a572"
+host = "vless2.pages.dev"
+server_name = "vless2.pages.dev"
+path = "/?ed=2048"
+random_ports = [443, 2053, 2083, 2087, 2096, 8443]
+
+[[proxies.vless]]
+remarks_prefix = "Node.3"
+uuid = "c23c79be-d404-4191-8b08-0828fb40c840"
+host = "vless3.pages.dev"
+server_name = "vless3.pages.dev"
+path = "/?ed=2048"
+random_ports = [443, 2053, 2083, 2087, 2096, 8443]
+
+[[proxies.vless]]
+remarks_prefix = "Node.4"
+uuid = "25e06d55-1e7b-46e7-b019-439f4937608c"
+host = "vless4.pages.dev"
+server_name = "vless4.pages.dev"
+path = "/?ed=2048"
+random_ports = [443, 2053, 2083, 2087, 2096, 8443]
+
+[[proxies.trojan]]
+remarks_prefix = "Node.5"
+password = "db80c3f3-2af8-4333-97d1-512cbcbc9942"
+host = "trojan1.pages.dev"
+server_name = "trojan1.pages.dev"
+path = "/"
+random_ports = [443, 2053, 2083, 2087, 2096, 8443]
+
+[[proxies.trojan]]
+remarks_prefix = "Node.6"
+password = "0f7ded2e-4b5a-4185-996f-9bb814eb9402"
+host = "trojan2.pages.dev"
+server_name = "trojan2.pages.dev"
+path = "/"
+random_ports = [443, 2053, 2083, 2087, 2096, 8443]
+
+[[proxies.trojan]]
+remarks_prefix = "Node.7"
+password = "d778ecbe-47da-48db-9764-6004e0c19895"
+host = "trojan3.pages.dev"
+server_name = "trojan3.pages.dev"
+path = "/"
+random_ports = [443, 2053, 2083, 2087, 2096, 8443]
+
+[[proxies.trojan]]
+remarks_prefix = "Node.8"
+password = "a4777f31-1e8b-4759-bf48-3a146f59b0b8"
+host = "trojan4.pages.dev"
+server_name = "trojan4.pages.dev"
+path = "/"
+random_ports = [443, 2053, 2083, 2087, 2096, 8443]
+
+# 后面可以根据前面的数据结构，继续添加其它vless/trojan节点参数
